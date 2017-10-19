@@ -1,0 +1,82 @@
+.lang
+	position: absolute
+	top: 0
+	right: 20px
+	display: inline-block 
+	text-align: center
+	&.is-open
+		.lang__list
+			visibility: visible
+			opacity: 1
+	&__current,
+	&__link
+		display: block
+		text-decoration: none 
+		padding: 15px 0
+		font-size: 18px
+		color: #252525
+	&__current 
+		position: relative
+		z-index: 11
+		padding: 30px 10px 19px
+		color: #fff
+		cursor: pointer
+		.lang__link
+			padding: 0  
+		&:after 
+			content: "" 
+			display: inline-block
+			width: 14px 
+			margin-bottom: -1px
+			margin-left: 3px 
+		&:hover
+			background-color: rgba(#fff, 0.1)
+		+r(1023)
+			padding: 20px 10px 19px
+	&__link
+		background: #FFF 
+		transition: background 0.2s
+		cursor: pointer
+		&:hover
+			background: #e1e1e1
+		&:active
+			color: #009933 
+	&__list
+		position: relative
+		margin-top: -2px 
+		z-index: 10 
+		visibility: hidden
+		opacity: 0
+		transition: opacity 0.2s
+	li
+		width: 70px 
+	&__arrow
+		position: absolute
+		top: 33px
+		right: 7px
+		color: #fff
+		font-size: 13px
+		+r(1023)
+			top: 23px
+
+.lang_mob
+	position: relative
+	top: auto
+	right: auto
+	display: block
+	text-align: right
+	margin-right: 20px
+	margin-top: 10px
+	.lang__current
+		float: right
+		min-width: 50px
+		text-align: center
+	.lang__list
+		overflow: hidden
+		visibility: visible
+		opacity: 1
+		margin-right: 50px
+	li
+		display: inline-block
+		width: 50px
+		text-align: center

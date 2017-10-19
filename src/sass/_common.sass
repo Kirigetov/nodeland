@@ -1,0 +1,135 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+// 			+s(codedby) 
+// ## gradient example
+//     	+g(#232323, #5c5c5c);
+//	   horizontal
+//     	+gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +r(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts
+// Save fonts to /src/fonts
+// +font(book, cytiapro-black-webfont)
+// and create mixin
+// =book
+// 	font-family: "book", Arial, sans-serif
+
+body
+	+mr
+	font-size: 16px
+	line-height: 1.2
+	
+// common blocks
+.row
+	position: relative
+	max-width: 980px
+	margin: 0 auto
+	padding: 0 10px
+	&_center
+		text-align: center
+	&_clear
+		+clr
+	&_wide
+		max-width: 1060px
+
+.title-h2
+	margin-bottom: 30px
+	text-transform: uppercase
+	color: #041439
+	font-size: 30px
+	font-weight: 400
+	text-align: center
+	&_white
+		color: #FFF 
+
+.title-h3
+	font-size: 24px
+	+mb
+	text-transform: uppercase
+	color: #fff
+	&_white
+		color: #FFF 
+	&_mb
+		margin-bottom: 25px
+	+r(1023)
+		font-size: 22px
+
+.btn-wrap
+	&_center
+		text-align: center
+.btn-label
+	margin-bottom: 5px
+	+mr
+	color: #fff
+	line-height: 1.2
+	+r(767)
+		margin-bottom: 20px
+
+.btn
+	max-width: 290px
+	width: 100%
+	padding: 9px 0
+	text-align: center
+	text-transform: uppercase
+	text-decoration: none
+	transition: background-color 0.3s
+	background: rgba(#fff, 0.6)
+	color: #041439
+	font-size: 20px
+	+mr
+	&:hover
+		background: rgba(#fff, 1)
+	&_blue
+		background: #255089
+		color: #fff
+		&:hover
+			background: rgba(#255089, 0.6)
+	&_blue
+		background: #94a6bc
+
+
+.text
+	margin-bottom: 20px 
+	font-size: 16px
+	color: #041439
+	&_white
+		color: #fff
+	&_center
+		text-align: center
+
+.scroll-top
+	position: fixed
+	bottom: 25px
+	right: 30px
+	width: 50px
+	height: 50px
+	background: none
+	font-size: 11px
+	color: #fff
+	transition: background 0.3s
+	display: none
+	box-shadow: 0 0 5px rgba(#000, 0.5) 
+	border-radius: 50%
+	+r(1024)
+		right: 20px
+	&:before
+		content: "" 
+		display: inline-block
+		+s('arrowUp')
+	&.is-visible
+		display: block
+ 

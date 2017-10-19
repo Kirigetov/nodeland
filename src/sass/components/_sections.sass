@@ -1,0 +1,64 @@
+.section
+  position: relative
+  padding: 20px 0 30px
+  &_bg
+    &_blue
+      background: #255089
+
+  &__parts
+    display: flex
+    flex-flow: row wrap
+  &__part
+    display: inline-flex
+    flex-flow: column wrap
+    justify-content: space-between
+    width: 50%
+    height: 270px
+    padding: 5px 0 0
+    +r(767)
+      width: 100%
+      display: block
+    &-left
+      padding-right: 30px
+      +r(1023)
+        padding-right: 15px
+      +r(767)
+        order: 2
+        padding-right: 0
+    &-right
+      padding-left: 30px
+      +r(1023)
+        padding-left: 15px
+      +r(767)
+        order: 1
+        text-align: center
+        padding-left: 0
+        margin-bottom: 30px
+    &-bottom
+      width: 100%
+
+.section-bg
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-repeat: no-repeat
+  background-position: 50% 50%
+  background-size: cover
+  z-index: -1
+
+
+.section_type
+  .inner
+    border-top: 10px solid #24bc52
+    padding: 15px 0 35px
+  .section__title
+    margin-bottom: 15px
+    color: #005e30
+    font-size: 48px
+    text-transform: uppercase
+    text-align: center
+
+.is-whitesmoke
+  background-color: whitesmoke

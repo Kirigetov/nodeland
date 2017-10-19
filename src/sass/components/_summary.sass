@@ -1,0 +1,63 @@
+.summary
+	max-width: 600px
+	margin: 0 auto 40px
+	font-size: 0
+	color: #fff
+	&__col
+		position: relative
+		display: inline-block
+		vertical-align: middle
+		width: 50%
+		&:first-child
+			padding-right: 40px
+
+	&__period
+	&__part
+		margin-bottom: 15px
+	&__part-title
+		+mb
+	&__part-title,
+	&__part-body
+		font-size: 15px
+
+.ico
+	max-width: 230px
+	height: 100px
+	margin: 30px 0
+	font-size: 0
+	&__col
+		position: relative
+		display: inline-flex
+		flex-direction: column
+		height: 100%
+		width: 50%
+		padding: 0 10px
+		justify-content: space-between
+		&:first-child
+			text-align: right
+			border-right: 2px solid #fff
+			&:before,
+			&:after
+				content: ""
+				position: absolute
+				right: -6px
+				height: 10px
+				width: 10px
+				background: #fff
+				border-radius: 50%
+			&:before
+				top: 0
+				margin-top: -6px
+
+			&:after
+				bottom: 0
+				margin-bottom: -6px
+	&__title
+		+mb
+
+	&__title,
+	&__data
+		margin: -10px 0
+		font-size: 15px
+		text-transform: uppercase
+

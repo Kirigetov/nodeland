@@ -1,0 +1,83 @@
+.top-screen
+  min-height: 945px
+  padding-top: 245px
+  padding-bottom: 50px
+  &:after
+    content: " "
+    display: table
+    clear: both
+  +r(1023)
+    min-height: 645px
+    padding-top: 185px
+  +r(767)
+    padding-top: 55px
+
+.pre-info
+  text-align: right
+  +r(767)
+    text-align: center
+  &__title
+    margin-bottom: 10px
+    span
+      +mr
+      color: #041439
+  &__body
+    color: #fff
+
+.timer
+  +r(767)
+    margin-bottom: 20px
+
+  &__body
+    display: inline-block
+
+  &__col
+    display: inline-block
+    margin-right: 10px
+
+  &__item
+    position: relative
+    width: 100px
+    margin-bottom: 5px
+    padding: 10px 0 10px 10px
+    font-size: 52px
+    color: #005e30
+    line-height: 1
+    letter-spacing: 22px
+    text-align: center
+    +mr
+    background-image: url('../img/timer-bg.png')
+    background-repeat: no-repeat
+    &:after
+      content: ""
+  &__caption
+    text-align: center
+    color: #0d3d7c
+
+.sold
+  font-size: 0
+  &__parts
+    display: inline-block
+    text-align: right
+    &:first-child
+      width: 60%
+      +r(1023)
+        width: 50%
+    &:last-child
+      width: 40%
+      padding-left: 10px
+      +r(1023)
+        width: 50%
+      .sold__title
+        text-align: left
+  &__title
+    margin-bottom: 5px
+    text-transform: uppercase
+  &__title,
+  &__field
+    color: #041439
+    font-size: 16px
+    line-height: 20px
+  &__field
+    padding: 5px 10px
+    background: rgba(#FFF, 0.6)

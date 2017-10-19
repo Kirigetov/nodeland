@@ -1,0 +1,81 @@
+.header
+	position: absolute
+	top: 0 
+	left: 0	
+	right: 0
+	height: 70px
+	z-index: 2 
+	background: rgba(#0a0f13, 0.55)
+	+r(1023)
+		height: 60px
+	+r(767)
+		display: none
+
+.logo
+	float: left
+	width: 120px
+	padding-top: 10px
+	a 
+		display: block
+		color: #fff
+		text-transform: uppercase
+		font-size: 48px
+		text-decoration: none
+	img
+		width: 100%
+	+r(1023)
+		width: 55px
+		padding-top: 5px
+
+.nav
+	float: right
+	margin-right: 90px
+	+r(1023)
+		// margin-right: 80px
+	&__list
+		font-size: 0
+		height: 100%
+		&_es
+			.nav__item
+				max-width: 180px
+			.nav__link
+				padding: 0 11px
+				font-size: 18px
+				line-height: 1
+				span
+					vertical-align: middle
+	&__item
+		display: inline-block
+		vertical-align: top
+		font-size: 0
+		height: 100%
+
+	&__link
+		position: relative
+		display: inline-block
+		vertical-align: middle
+		padding: 28px 11px 18px
+		height: 100%
+		font-size: 20px
+		color: #fff
+		text-decoration: none
+		transition: background 0.3s
+		+r(1023)
+			padding: 20px 10px 19px
+			font-size: 18px
+		&:before
+			content: ''
+			display: inline-block
+			height: 100%
+			vertical-align: middle
+			width: 0
+		&:hover
+			background: rgba(#fff, 0.25)
+		&_sm
+			max-width: 190px
+			font-size: 17px
+			padding: 0 11px
+		span
+			vertical-align: middle
+			display: inline-block
+			

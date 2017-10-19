@@ -1,0 +1,123 @@
+.mob-nav
+    +clr
+    position: fixed
+    display: none
+    width: 100%
+    opacity: 0
+    visibility: hidden
+    top: 42px
+    left: 0
+    bottom: 0
+    padding: 0 0 20px
+    background: #fff
+    overflow: auto
+    z-index: 200
+    transition: opacity 0.2s ease, visibility 0.2s ease
+    +r(1023)
+        &.is-visible 
+            display: block
+            opacity: 1
+            visibility: visible 
+
+.mob-menu
+    display: none
+    margin-bottom: 2px
+    background-color: #fff
+    box-shadow: 0.5px 0.9px 5px rgba(34, 31, 31, 0.25)
+    +r(767)
+        display: block
+    &__inner
+        position: relative
+        height: 50px
+        padding: 15px 10px 10px
+        background: rgba(#0a0f13, 0.55)
+    &__logo
+        display: inline-block
+        width: 160px
+        height: 30px
+        margin-top: -9px
+    
+    &__btn
+        position: relative
+        display: none
+        float: right
+        width: 22px
+        height: 18px
+        margin-left: 20px
+        font-size: 20px
+        line-height: 1
+        outline: none
+        background: none 
+        &.is-active
+            &:before
+                transform: rotate(-45deg)
+            &:after
+                transform: rotate(45deg)
+            span
+                transform: scale(0)
+        &:before,
+        &:after,
+        span
+            position: absolute
+            left: 0
+            right: 0
+            height: 2px
+            background: #fff
+        &:before
+            content: ""
+            top: 0
+            transform-origin: 100% 100%
+            transition: transform 0.2s ease
+        &:after
+            content: ""
+            bottom: 0
+            transform-origin: 97% 30%
+            transition: transform 0.2s ease
+        span
+            top: 50%
+            margin-top: -1px
+            transition: transform 0.3s ease
+        &:hover
+            outline: none
+        +r(1023) 
+            display: block
+
+.nav-mob
+    &__list 
+        margin: 0
+        font-size: 0
+        text-align: right
+        
+    &__option 
+        position: relative
+        border-bottom: 1px solid #ccc
+        list-style-type: none
+        &.has-navdrop 
+            .nav__link 
+                padding: 8px 18px
+
+    &__link 
+        position: relative
+        display: block
+        padding: 10px 18px 9px
+        font-size: 24px
+        text-transform: uppercase
+        color: #252525
+        line-height: 1
+        outline: none
+        &:after 
+            content: ""
+            display: none
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            background: rgba(0, 0, 0, 0.2)
+            z-index: -1
+        
+    &.is-active 
+        &:after 
+            display: block
+.menu-open
+    overflow: hidden
