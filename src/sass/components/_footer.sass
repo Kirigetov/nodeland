@@ -4,14 +4,15 @@
 	z-index: 2 
 	background: #0c2139
 	+r(1023)
-		display: none
+		.nav,
+		.lang,
+		.logo
+			display: none
+	&__bottom
+		+clr
+		padding: 26px 0 20px
+		background: darken(#0c2139, 5)
 
-.logo
-	float: left
-	width: 120px
-	&_footer
-		padding-top: 0
-		margin-top: -30px
 .lang
 	&_footer
 		.lang__list
@@ -19,4 +20,24 @@
 			bottom: 100%
 			right: 0
 			margin-top: 0
-		
+
+.socials
+	float: right
+	+r(767)
+		float: none
+		margin-bottom: 25px
+
+.copy
+	float: left
+	color: #fff
+	+r(767)
+		float: none
+
+.social
+	display: inline-block
+	vertical-align: top
+	margin-left: 15px
+	&__link
+		display: block
+		color: #fff
+		font-size: 22px

@@ -88,22 +88,18 @@ $("#product").mouseenter(function(){
        lastScrollTop = st;
     });  
 
-    $('.js-timer-tokken')
-      .prop('number', 214815)
-      .animateNumber(
-        {
-          number: 0,
-          numberStep: function(now, tween) {
-            var target = $(tween.elem),
-                rounded_now = Math.round(now);
-
-            target.text(now === tween.end ? 'Launch!' : rounded_now);
-          }
-        },
-        1509494400000,  // до 02.08.2017
-
-        'linear'
-    );
+    // counter of buying
+    jQuery(function($) {
+        $('.js-timer-tokken').countTo({
+            from: 0,
+            to: 2500,
+            speed: 5000000,
+            refreshInterval: 5004,
+            onComplete: function(value) {
+                console.debug(this);
+            }
+        });
+    });
 
     $('.js-nav-btn').click(function(event){
         $(this).toggleClass('is-active');
