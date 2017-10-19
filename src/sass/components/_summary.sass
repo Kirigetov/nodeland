@@ -10,6 +10,12 @@
 		width: 50%
 		&:first-child
 			padding-right: 40px
+		+r(600)
+			display: block
+			width: 100%
+			&:first-child
+				padding-right: 0
+				margin-bottom: 50px
 
 	&__period
 	&__part
@@ -25,6 +31,8 @@
 	height: 100px
 	margin: 30px 0
 	font-size: 0
+	+r(600)
+		margin: 40px auto
 	&__col
 		position: relative
 		display: inline-flex

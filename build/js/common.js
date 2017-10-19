@@ -86,13 +86,41 @@ $("#product").mouseenter(function(){
         }
        }
        lastScrollTop = st;
-    });
+    });  
 
-     $('.js-nav-btn').click(function(event){
+    $('.js-timer-tokken')
+      .prop('number', 214815)
+      .animateNumber(
+        {
+          number: 0,
+          numberStep: function(now, tween) {
+            var target = $(tween.elem),
+                rounded_now = Math.round(now);
+
+            target.text(now === tween.end ? 'Launch!' : rounded_now);
+          }
+        },
+        1509494400000,  // до 02.08.2017
+
+        'linear'
+    );
+
+    $('.js-nav-btn').click(function(event){
         $(this).toggleClass('is-active');
         $('.js-mob-nav').toggleClass('is-visible');
-        $('body').toggleClass('menu-open');
     });
 
+    $('.js-nav-link').on('click', function() {
+        var section = $(this).attr('href');
+        
+        $('html, body').animate({
+            scrollTop: $(section).offset().top - 10
+        }, 500);
+
+        $('.js-nav-btn').removeClass('is-active');
+        $('.js-mob-nav').removeClass('is-visible');
+
+        return false;
+    });
 
 });

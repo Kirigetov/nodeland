@@ -1,6 +1,28 @@
 .table
 	max-width: 850px
 	margin: 0 auto 25px
+	+r(767)
+		display: none
+	&_mob
+		display: none
+		+r(767)
+			display: block
+			tr
+				&:last-child
+					td
+						background: none
+						color: #041439
+			td
+				font-size: 13px
+				&:nth-child(2)
+					width: 40%!important
+				&:nth-child(3)
+					width: 30%!important
+			th
+				width: 30%
+				font-size: 14px
+				background: none
+				color: #041439
 	tr
 		td, th
 			padding: 5px
@@ -48,3 +70,20 @@
 			th, td
 				background: #255089
 				color: #fff
+	+r(767)
+		display: none
+	&_mob
+		display: none
+		tr
+			&:nth-child(even)
+				th, td
+					background: none
+					color: #041439
+			td
+				&:nth-child(even)
+					background: #255089
+					color: #fff
+			th
+				text-align: left!important
+		+r(767)
+			display: block 
