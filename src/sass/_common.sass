@@ -28,12 +28,19 @@
 // =book
 // 	font-family: "book", Arial, sans-serif
 
+html, body
+	height: 100%
+	min-height: 100%
+
 body
 	+mr
 	font-size: 16px
 	line-height: 1.2
 	
 // common blocks
+.out
+	position: relative
+
 .row
 	position: relative
 	max-width: 980px
@@ -135,5 +142,5 @@ body
 	&.is-visible
 		display: block
  
-.popup-open
+.is-hidden
 	overflow: hidden

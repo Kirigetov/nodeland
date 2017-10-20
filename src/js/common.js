@@ -49,19 +49,19 @@ $("#product").mouseenter(function(){
    $('.js-join-btn').on('click', function() {
         var popup = $('html, body').find('.popup');
         popup.addClass('is-open');
-        $('body').addClass('popup-open');
+        $('body').addClass('is-hidden');
     });
 
     $('.js-close-popup').on('click', function() {
         var popup = $('html, body').find('.popup');
         popup.removeClass('is-open');
-        $('body').removeClass('popup-open');
+        $('body').removeClass('is-hidden');
     });
 
     $(".popup").on("click", function (e) {
         if ($(e.target).closest('.js-popup-inner').length) return;
         $(".popup").removeClass('is-open');
-        $('body').removeClass('popup-open');
+        $('body').removeClass('is-hidden');
     })
 
     // scroll button
@@ -70,6 +70,18 @@ $("#product").mouseenter(function(){
             scrollTop: 0
         }, 100);
         return false;
+    });
+
+    // switch langs
+    $('.js-lang').on('click touchend', function() {
+        var parent = $(this).closest(".lang");
+
+        if ( !parent.hasClass("is-open")) {
+            parent.addClass("is-open");
+        } else {
+            parent.removeClass("is-open");
+        }
+
     });
 
     var lastScrollTop = 0;
@@ -104,6 +116,7 @@ $("#product").mouseenter(function(){
     $('.js-nav-btn').click(function(event){
         $(this).toggleClass('is-active');
         $('.js-mob-nav').toggleClass('is-visible');
+        $('body').addClass('is-hidden');
     });
 
     $('.js-nav-link').on('click', function() {
@@ -113,6 +126,7 @@ $("#product").mouseenter(function(){
             scrollTop: $(section).offset().top - 10
         }, 500);
 
+        $('body').removeClass('is-hidden');
         $('.js-nav-btn').removeClass('is-active');
         $('.js-mob-nav').removeClass('is-visible');
 
