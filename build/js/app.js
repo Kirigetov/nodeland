@@ -92,6 +92,15 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 })(jQuery);
 
 
+/*
+ jQuery animateNumber plugin v0.0.14
+ (c) 2013, Alexandr Borisov.
+ https://github.com/aishek/jquery-animateNumber
+*/
+(function(d){var r=function(b){return b.split("").reverse().join("")},m={numberStep:function(b,a){var e=Math.floor(b);d(a.elem).text(e)}},g=function(b){var a=b.elem;a.nodeType&&a.parentNode&&(a=a._animateNumberSetter,a||(a=m.numberStep),a(b.now,b))};d.Tween&&d.Tween.propHooks?d.Tween.propHooks.number={set:g}:d.fx.step.number=g;d.animateNumber={numberStepFactories:{append:function(b){return function(a,e){var f=Math.floor(a);d(e.elem).prop("number",a).text(f+b)}},separator:function(b,a,e){b=b||" ";
+a=a||3;e=e||"";return function(f,k){var u=0>f,c=Math.floor((u?-1:1)*f).toString(),n=d(k.elem);if(c.length>a){for(var h=c,l=a,m=h.split("").reverse(),c=[],p,s,q,t=0,g=Math.ceil(h.length/l);t<g;t++){p="";for(q=0;q<l;q++){s=t*l+q;if(s===h.length)break;p+=m[s]}c.push(p)}h=c.length-1;l=r(c[h]);c[h]=r(parseInt(l,10).toString());c=c.join(b);c=r(c)}n.prop("number",f).text((u?"-":"")+c+e)}}}};d.fn.animateNumber=function(){for(var b=arguments[0],a=d.extend({},m,b),e=d(this),f=[a],k=1,g=arguments.length;k<g;k++)f.push(arguments[k]);
+if(b.numberStep){var c=this.each(function(){this._animateNumberSetter=b.numberStep}),n=a.complete;a.complete=function(){c.each(function(){delete this._animateNumberSetter});n&&n.apply(this,arguments)}}return e.animate.apply(e,f)}})(jQuery);
+
 $(document).ready(function() {
 
 $("#product").mouseenter(function(){
@@ -192,21 +201,47 @@ $("#product").mouseenter(function(){
         }
        }
        lastScrollTop = st;
-    });  
+    });   
 
     // counter of buying
-    jQuery(function($) {
-        $('.js-timer-tokken').countTo({
-            from: 0,
-            to: 2500,
-            speed: 5000000,
-            refreshInterval: 5004,
-            onComplete: function(value) {
-                console.debug(this);
-            }
-        });
-    });
+    // jQuery(function($) {
+    //     $('.js-timer-tokken').countTo({
+    //         from: 0,
+    //         to: 2500,
+    //         speed: 5000000,
+    //         refreshInterval: 5000,
+    //         onUpdate: function (value) {
+    //         var rand = 2 - 0.5 + Math.random() * (10 - 2 + 1)
+    //             rand = Math.round(rand);
+    //             console.log(rand);
 
+    //             return 0;
+    //         },
+    //     });
+
+    //   });
+
+    $('.js-timer-tokken')
+      .prop('number', 0)
+      .animateNumber(
+        {
+          number: 214815,
+          numberStep: function(now, tween) {
+            var rand = 2 - 0.5 + Math.random() * (10 - 2 + 1)
+                rand = Math.round(rand);
+                console.log(rand);
+            var target = $(tween.elem),
+                rounded_now = Math.round(now);
+
+            target.text(now === tween.end ? 'Launch!' : rounded_now);
+          }
+        },
+        1509577200,  // до 02.08.2017
+
+        'linear'
+    );
+
+  
     $('.js-nav-btn').click(function(event){
         $(this).toggleClass('is-active');
         $('.js-mob-nav').toggleClass('is-visible');
@@ -228,3 +263,6 @@ $("#product").mouseenter(function(){
     });
 
 });
+
+
+// 1509577200 1/11/2017 23:00

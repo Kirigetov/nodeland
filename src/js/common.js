@@ -98,21 +98,47 @@ $("#product").mouseenter(function(){
         }
        }
        lastScrollTop = st;
-    });  
+    });   
 
     // counter of buying
-    jQuery(function($) {
-        $('.js-timer-tokken').countTo({
-            from: 0,
-            to: 2500,
-            speed: 5000000,
-            refreshInterval: 5004,
-            onComplete: function(value) {
-                console.debug(this);
-            }
-        });
-    });
+    // jQuery(function($) {
+    //     $('.js-timer-tokken').countTo({
+    //         from: 0,
+    //         to: 2500,
+    //         speed: 5000000,
+    //         refreshInterval: 5000,
+    //         onUpdate: function (value) {
+    //         var rand = 2 - 0.5 + Math.random() * (10 - 2 + 1)
+    //             rand = Math.round(rand);
+    //             console.log(rand);
 
+    //             return 0;
+    //         },
+    //     });
+
+    //   });
+
+    $('.js-timer-tokken')
+      .prop('number', 0)
+      .animateNumber(
+        {
+          number: 214815,
+          numberStep: function(now, tween) {
+            var rand = 2 - 0.5 + Math.random() * (10 - 2 + 1)
+                rand = Math.round(rand);
+                console.log(rand);
+            var target = $(tween.elem),
+                rounded_now = Math.round(now);
+
+            target.text(now === tween.end ? 'Launch!' : rounded_now);
+          }
+        },
+        1509577200,  // до 02.08.2017
+
+        'linear'
+    );
+
+  
     $('.js-nav-btn').click(function(event){
         $(this).toggleClass('is-active');
         $('.js-mob-nav').toggleClass('is-visible');
@@ -134,3 +160,6 @@ $("#product").mouseenter(function(){
     });
 
 });
+
+
+// 1509577200 1/11/2017 23:00

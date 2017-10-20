@@ -354,6 +354,7 @@ body { font-family: "agavalanchec", Arial, sans-serif; font-size: 16px; line-hei
  .title-h3{ font-size: 22px; }
  .header{ height: 60px; }
  .logo{ width: 55px; padding-top: 5px; }
+ .logo img{ width: 100%; }
  .nav__link{ padding: 20px 10px 19px; font-size: 18px; }
  .mob-nav.is-visible{ display: block; opacity: 1; visibility: visible; }
  .mob-menu__btn{ display: block; }
