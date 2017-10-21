@@ -204,42 +204,17 @@ $("#product").mouseenter(function(){
     });   
 
     // counter of buying
-    // jQuery(function($) {
-    //     $('.js-timer-tokken').countTo({
-    //         from: 0,
-    //         to: 2500,
-    //         speed: 5000000,
-    //         refreshInterval: 5000,
-    //         onUpdate: function (value) {
-    //         var rand = 2 - 0.5 + Math.random() * (10 - 2 + 1)
-    //             rand = Math.round(rand);
-    //             console.log(rand);
-
-    //             return 0;
-    //         },
-    //     });
-
-    //   });
-
-    $('.js-timer-tokken')
-      .prop('number', 0)
-      .animateNumber(
-        {
-          number: 214815,
-          numberStep: function(now, tween) {
-            var rand = 2 - 0.5 + Math.random() * (10 - 2 + 1)
-                rand = Math.round(rand);
-                console.log(rand);
-            var target = $(tween.elem),
-                rounded_now = Math.round(now);
-
-            target.text(now === tween.end ? 'Launch!' : rounded_now);
-          }
-        },
-        1509577200,  // до 02.08.2017
-
-        'linear'
-    );
+ 
+ // $('.js-timer-tokken')
+ 
+    var count = 155; // произвольное число
+    function tick() {
+        count += Math.round(Math.random()*20); // 20- рандом от 1 до 20
+        $('.js-timer-tokken').text(count);
+        $('.js-timer-sum').text(count);
+        setTimeout(tick, Math.round(3000 + Math.random()*2000)); // рандом по времени обновления 
+    }
+    tick();
 
   
     $('.js-nav-btn').click(function(event){

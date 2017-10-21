@@ -1,17 +1,30 @@
 .footer
 	position: relative
-	height: 70px
+	min-height: 70px
+	height: 1px
 	z-index: 2 
-	background: #0c2139
+	background: #0d2139
+	+r(700)
+		height: auto
+	&__inner
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 100%
+		flex-flow: row nowrap
+		+r(700)
+			flex-flow: column-reverse nowrap
+			justify-content: center
+
 	+r(1023)
-		.nav,
-		.lang,
 		.logo
 			display: none
 	&__bottom
 		+clr
 		padding: 26px 0 20px
 		background: darken(#0c2139, 5)
+	.row
+		height: 100%
 
 .lang
 	&_footer
@@ -21,17 +34,22 @@
 			right: 0
 			margin-top: 0
 
-.socials
-	float: right
-	+r(767)
-		float: none
-		margin-bottom: 25px
-
 .copy
-	float: left
 	color: #fff
+	+r(700)
+		padding: 0 10px 15px
+		text-align: center
+		font-size: 13px
+
+.socials,
+.copy
+	padding: 0 10px
+
+.socials
 	+r(767)
-		float: none
+		padding: 15px 10px 10px
+	+r(600)
+		padding: 15px 0 10px
 
 .social
 	display: inline-block
