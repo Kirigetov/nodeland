@@ -106,10 +106,15 @@ $("#product").mouseenter(function(){
  
     var count = 155; // произвольное число
     function tick() {
+
         count += Math.round(Math.random()*20); // 20- рандом от 1 до 20
+        document.cookie = count;
+
         $('.js-timer-tokken').text(count);
         $('.js-timer-sum').text(count);
+
         setTimeout(tick, Math.round(3000 + Math.random()*2000)); // рандом по времени обновления 
+
     }
     tick();
 
