@@ -283,7 +283,7 @@ body { font-family: "agavalanchec", Arial, sans-serif; font-size: 16px; line-hei
 .road__info + .road__info { margin-top: 5px; }
 
 .table { max-width: 850px; margin: 0 auto 25px; }
-.table_mob { display: none; }
+.table_mob { text-align: justify; display: none; }
 .table tr td, .table tr th { padding: 5px; vertical-align: middle; }
 .table tr td:first-child, .table tr th:first-child { width: 80px; font-family: "agavalanchec-bold", Arial, sans-serif; }
 .table tr td:nth-child(2), .table tr th:nth-child(2) { width: 120px; }

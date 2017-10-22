@@ -104,10 +104,10 @@ $("#product").mouseenter(function(){
  
  // $('.js-timer-tokken')
  
-    var count = 155; // произвольное число
+    var count = 2341; // произвольное число
     function tick() {
 
-        count += Math.round(Math.random()*20); // 20- рандом от 1 до 20
+        count += Math.round(Math.random()*50); // 50- рандом от 1 до 50
         document.cookie = count;
 
         $('.js-timer-tokken').text(count);
@@ -122,7 +122,7 @@ $("#product").mouseenter(function(){
     $('.js-nav-btn').click(function(event){
         $(this).toggleClass('is-active');
         $('.js-mob-nav').toggleClass('is-visible');
-        $('body').addClass('is-hidden');
+        $('body').toggleClass('is-hidden');
     });
 
     $('.js-nav-link').on('click', function() {
@@ -132,7 +132,7 @@ $("#product").mouseenter(function(){
             scrollTop: $(section).offset().top - 10
         }, 500);
 
-        $('body').removeClass('is-hidden');
+        $('body').toggleClass('is-hidden');
         $('.js-nav-btn').removeClass('is-active');
         $('.js-mob-nav').removeClass('is-visible');
 
