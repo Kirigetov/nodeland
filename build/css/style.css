@@ -100,7 +100,7 @@ body { font-family: "agavalanchec", Arial, sans-serif; font-size: 16px; line-hei
 .nav__list_es .nav__link { padding: 0 11px; font-size: 18px; line-height: 1; }
 .nav__list_es .nav__link span { vertical-align: middle; }
 .nav__item { display: inline-block; vertical-align: top; font-size: 0; height: 100%; }
-.nav__link { position: relative; display: inline-block; vertical-align: middle; padding: 28px 11px 18px; height: 100%; font-size: 20px; color: #fff; text-decoration: none; -webkit-transition: background 0.3s; transition: background 0.3s; }
+.nav__link { position: relative; display: inline-block; vertical-align: middle; padding: 24px 11px 22px; height: 100%; font-size: 20px; color: #fff; text-decoration: none; -webkit-transition: background 0.3s; transition: background 0.3s; }
 .nav__link:before { content: ""; display: inline-block; height: 100%; vertical-align: middle; width: 0; }
 .nav__link:hover { background: rgba(255, 255, 255, 0.25); }
 .nav__link_sm { max-width: 190px; font-size: 17px; padding: 0 11px; }
@@ -151,7 +151,7 @@ body { font-family: "agavalanchec", Arial, sans-serif; font-size: 16px; line-hei
 .lang { position: absolute; top: 0; right: 20px; display: inline-block; text-align: center; }
 .lang.is-open .lang__list { visibility: visible; opacity: 1; }
 .lang__current, .lang__link { display: block; text-decoration: none; padding: 15px 0; font-size: 18px; color: #252525; }
-.lang__current { position: relative; z-index: 11; padding: 29px 11px 20px; color: #fff; cursor: pointer; }
+.lang__current { position: relative; z-index: 11; padding: 27px 11px 20px; color: #fff; cursor: pointer; }
 .lang__current .lang__link { padding: 0; }
 .lang__current:after { content: ""; display: inline-block; width: 14px; margin-bottom: -1px; margin-left: 3px; }
 .lang__current:hover { background-color: rgba(255, 255, 255, 0.1); }
@@ -252,6 +252,7 @@ body { font-family: "agavalanchec", Arial, sans-serif; font-size: 16px; line-hei
 .member__info { font-size: 14px; color: #fff; line-height: 1.2; margin: 0 auto; }
 
 .road-container { max-width: 700px; margin: 0 auto; }
+.road-container_mb .road__info { margin-bottom: 20px; }
 
 .road-year { color: #a8a8a8; font-size: 30px; line-height: 50px; text-transform: uppercase; }
 

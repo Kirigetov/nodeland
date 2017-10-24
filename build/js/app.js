@@ -142,7 +142,7 @@ $("#product").mouseenter(function(){
         }
     }
 
-	$(".js-timer").countdown('2017/11/01 23:00:00', function(event) {
+	$(".js-timer").countdown('2017/11/11 23:00:00', function(event) {
 		$('.js-timer-days').text(event.strftime('%D'));
 		$('.js-timer-hour').text(event.strftime('%H'));
 		$('.js-timer-min').text(event.strftime('%M'));
@@ -235,7 +235,7 @@ $("#product").mouseenter(function(){
             scrollTop: $(section).offset().top - 10
         }, 500);
 
-        $('body').toggleClass('is-hidden');
+        $('body').removeClass('is-hidden');
         $('.js-nav-btn').removeClass('is-active');
         $('.js-mob-nav').removeClass('is-visible');
 
