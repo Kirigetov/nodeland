@@ -151,7 +151,7 @@ body { font-family: "agavalanchec", Arial, sans-serif; font-size: 16px; line-hei
 .lang { position: absolute; top: 0; right: 20px; display: inline-block; text-align: center; }
 .lang.is-open .lang__list { visibility: visible; opacity: 1; }
 .lang__current, .lang__link { display: block; text-decoration: none; padding: 15px 0; font-size: 18px; color: #252525; }
-.lang__current { position: relative; z-index: 11; padding: 30px 10px 19px; color: #fff; cursor: pointer; }
+.lang__current { position: relative; z-index: 11; padding: 29px 11px 20px; color: #fff; cursor: pointer; }
 .lang__current .lang__link { padding: 0; }
 .lang__current:after { content: ""; display: inline-block; width: 14px; margin-bottom: -1px; margin-left: 3px; }
 .lang__current:hover { background-color: rgba(255, 255, 255, 0.1); }
@@ -160,7 +160,7 @@ body { font-family: "agavalanchec", Arial, sans-serif; font-size: 16px; line-hei
 .lang__link:active { color: #009933; }
 .lang__list { position: relative; margin-top: -2px; z-index: 10; visibility: hidden; opacity: 0; -webkit-transition: opacity 0.2s; transition: opacity 0.2s; }
 .lang li { width: 70px; }
-.lang__arrow { position: absolute; top: 33px; right: 7px; color: #fff; font-size: 13px; }
+.lang__arrow { position: absolute; top: 30px; right: 7px; color: #fff; font-size: 13px; }
 
 .lang_mob { position: relative; top: auto; right: auto; display: block; text-align: right; margin-right: 20px; margin-top: 10px; }
 .lang_mob .lang__current { float: right; min-width: 50px; text-align: center; color: red; padding: 15px 20px 19px; }
